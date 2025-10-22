@@ -97,12 +97,37 @@ export class DaemonManager {
     getPythonPath() {
         // 优先使用环境变量指定的Python路径
         if (process.env.PYTHON_PATH) return process.env.PYTHON_PATH;
+
         // 如果在虚拟环境中，使用虚拟环境的Python
         if (process.env.VIRTUAL_ENV) {
             return process.platform === 'win32'
                 ? path.join(process.env.VIRTUAL_ENV, 'Scripts', 'python')
                 : path.join(process.env.VIRTUAL_ENV, 'bin', 'python');
         }
+
+        // 尝试检测mise管理的Python (优先级高于系统Python)
+        const homeDir = process.env.HOME || process.env.USERPROFILE;
+        if (homeDir) {
+            const misePythonPath = path.join(homeDir, '.local/share/mise/installs/python');
+            if (fs.existsSync(misePythonPath)) {
+                try {
+                    // 获取mise中的Python版本目录
+                    const versions = fs.readdirSync(misePythonPath);
+                    if (versions.length > 0) {
+                        // 使用第一个找到的版本 (或者可以排序取最新版本)
+                        const pythonBin = path.join(misePythonPath, versions[0], 'bin', 'python3');
+                        if (fs.existsSync(pythonBin)) {
+                            console.log(`[daemonManager] 使用 mise Python: ${pythonBin}`);
+                            return pythonBin;
+                        }
+                    }
+                } catch (err) {
+                    // 读取mise目录失败，继续尝试其他方式
+                    console.warn(`[daemonManager] 检测mise Python失败: ${err.message}`);
+                }
+            }
+        }
+
         // 默认Python路径
         return process.platform === 'win32' ? 'python.exe' : 'python3';
     }
