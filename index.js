@@ -1,5 +1,9 @@
+import { performance } from 'perf_hooks';
+const startTime = performance.now();
+
 import * as fastlogger from './controllers/fastlogger.js'
 import path from 'path';
+import {checkPhpAvailable} from './utils/phpEnv.js';
 import os from 'os';
 import qs from 'qs';
 import {fileURLToPath} from 'url';
@@ -30,16 +34,23 @@ const jsonDir = path.join(__dirname, 'json');
 const jsDir = path.join(__dirname, 'spider/js');
 const dr2Dir = path.join(__dirname, 'spider/js_dr2');
 const pyDir = path.join(__dirname, 'spider/py');
+const phpDir = path.join(__dirname, 'spider/php');
 const catDir = path.join(__dirname, 'spider/catvod');
 const catLibDir = path.join(__dirname, 'spider/catLib');
 const xbpqDir = path.join(__dirname, 'spider/xbpq');
 const configDir = path.join(__dirname, 'config');
 
-const pluginProcs = startAllPlugins(__dirname);
-// console.log('pluginProcs:', pluginProcs);
+// 异步启动插件，不阻塞主线程
+let pluginProcs = {};
+setTimeout(() => {
+    pluginProcs = startAllPlugins(__dirname);
+}, 0);
 
 // 添加钩子事件
 fastify.addHook('onReady', async () => {
+    await checkPhpAvailable();
+    const endTime = performance.now();
+    console.log(`🚀 Server started in ${(endTime - startTime).toFixed(2)}ms`);
     try {
         await daemon.startDaemon();
         fastify.log.info('Python守护进程已启动');
@@ -168,6 +179,7 @@ const registerOptions = {
     jsDir,
     dr2Dir,
     pyDir,
+    phpDir,
     catDir,
     catLibDir,
     xbpqDir,
@@ -250,7 +262,7 @@ const start = async () => {
         } else {
             console.log('Not running on Vercel!');
         }
-
+        return true;
     } catch (err) {
         fastify.log.error(err);
         process.exit(1);
@@ -265,8 +277,10 @@ const stop = async () => {
         // 停止主服务器
         await fastify.server.close();
         console.log('🛑 所有服务已优雅停止');
+        return true;
     } catch (err) {
         fastify.log.error(`停止服务器时发生错误:${err.message}`);
+        return false;
     }
 };
 

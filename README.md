@@ -11,16 +11,21 @@ nodejs作为服务端的drpy实现。全面升级异步写法
 ### 常用超链接
 
 * [本项目主页-免翻](https://git-proxy.playdreamer.cn/hjdhnx/drpy-node)
-* [接口文档](docs/apidoc.md) | [接口列表如定时任务](docs/apiList.md) | [小猫影视-待对接T4](https://github.com/waifu-project/movie/pull/135)
+* ~~[最新DS本地包-适配皮卡丘](/gh/release)~~
+* [DS本地包下载中心](/admin/download)
+* [接口文档](docs/apidoc.md) | [接口列表如定时任务](docs/apiList.md) |
+  ~~[小猫影视-待对接T4](https://github.com/waifu-project/movie/pull/135)~~
 * [代码质量评估工具说明](docs/codeCheck.md) | [DS项目代码评估报告](docs/codeCheckReport.md)
 * [本地配置接口-动态本地](/config?healthy=1&pwd=$pwd)
 * [本地配置接口-动态外网/局域网](/config/1?healthy=1&pwd=$pwd)
 * [其他配置接口-订阅过滤](/docs/sub.md)
 * [python环境](/docs/pyenv.md) | [DS项目环境变量说明](/docs/envdoc.md)
+* php环境(详见 spider/php/readme.md) 不在这里赘述
 * [猫源调试教程](/docs/catDebug.md)
 * [接口压测教程](/docs/httpTest.md)
 * [AI编程工具 trae](https://www.trae.ai/account-setting#subscription) | 邮编ZIP输入: 518000
-* [免费AI-360纳米](https://bot.n.cn/)|[免费AI-当贝AI](https://ai.dangbei.com/chat)
+* [推荐使用AI模型-GLM4.7](https://www.bigmodel.cn/glm-coding?ic=DRV3C8M5NX) | [GLM配置文档](https://docs.bigmodel.cn/cn/coding-plan/tool/trae)
+* [免费AI-360纳米](https://bot.n.cn/)|[免费AI-当贝AI](https://ai.dangbei.com/chat)|[国外聚合全模型](https://lmarena.ai/)
 * [本站防止爬虫协议](/robots.txt)
 * [油猴脚本-反切屏检测](/public/monkey/check_screen_leave.user.js)
 * [油猴脚本-通用网页脚本框架](/public/monkey/clipboard-sender.user.js)
@@ -42,6 +47,7 @@ nodejs作为服务端的drpy实现。全面升级异步写法
 * [DS时钟插件-白色时钟](/apps/clock/white_clock.html)|[日历时钟](/apps/clock/index.html)
 * [DS庆祝页面-完结撒花](/apps/happy/index.html)
 * [bookReader](/apps/book-reader)
+* [系统备份与恢复](/apps/backup-restore/index.html)
 * [代码加解密工具](/admin/encoder)
 * [央视点播解析工具](/proxy/央视大全[官]/index.html)
 * [在线猫ds源主页](/cat/index.html)
@@ -56,27 +62,29 @@ nodejs作为服务端的drpy实现。全面升级异步写法
 * [DS web插件项目-drplayer](https://github.com/hjdhnx/DrPlayer)
 * [drpy2打包项目](https://github.com/hjdhnx/drpy-webpack)
 
+### 免费壳子推荐
+
+* [酷9](https://wwbty.lanzouv.com/iGoUV3d3hxuf)
+* [千寻](https://wwbty.lanzouv.com/iSSN93d3hyzg)
+* [皮卡丘](https://github.com/ingriddaleusag-dotcom/PeekPiliRelease)
+
 ## 更新记录
 
-### 20251017
+### 20260131
 
-更新至V1.3.14
+更新至V1.3.21
 
-### 20251015
+### 20260127
 
-更新至V1.3.13
+更新至V1.3.20
 
-### 20251014
+### 20260125
 
-更新至V1.3.12
+更新至V1.3.19
 
-### 20251013
+### 20260118
 
-更新至V1.3.11
-
-### 20251012
-
-更新至V1.3.10
+更新至V1.3.18
 
 [点此查看完整更新记录](docs/updateRecord.md)
 
@@ -179,6 +187,8 @@ pm2 restart drpys
 * [源动力-新](https://tvshare.cn/)
 * [源动力-老](https://sourcepower.top/index)
 * [电竞专业反应测试](https://www.arealme.com/brain-memory-game/zh/)
+* [桌面启动器](https://wwbty.lanzouv.com/iDZaP3d3i5ud)
+* [不知名获取网盘CK工具](http://sspa8.top:8100/pan/admin/index.php)
 
 ## AI接入
 
