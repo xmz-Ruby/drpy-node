@@ -55,6 +55,16 @@ function logExt(_ext) {
     return Array.isArray(_ext) || typeof _ext == "object" ? JSON.stringify(_ext) : _ext
 }
 
+function guessRuleType(baseName, ruleObject) {
+    if (baseName.includes('[画]')) {
+        ruleObject.类型 = '漫画'
+    } else if (baseName.includes('[书]')) {
+        ruleObject.类型 = '小说'
+    } else if (baseName.includes('[短]')) {
+        ruleObject.类型 = '短剧'
+    }
+}
+
 /**
  * 生成站点配置JSON数据
  * 扫描各种类型的源文件并生成统一的配置格式
@@ -186,10 +196,12 @@ async function generateSiteJSON(options, requestHost, sub, pwd) {
                     } catch (e) {
                         throw new Error(`Error parsing rule object for file: ${file}, ${e.message}`);
                     }
+                    guessRuleType(baseName, ruleObject);
                     Object.assign(ruleMeta, {
                         title: ruleObject.title,
                         author: ruleObject.author,
                         类型: ruleObject.类型 || '影视',
+                        mergeList: ruleObject.二级 === '*' || ruleObject.mergeList,
                         searchable: ruleObject.searchable,
                         filterable: ruleObject.filterable,
                         quickSearch: ruleObject.quickSearch,
@@ -197,6 +209,13 @@ async function generateSiteJSON(options, requestHost, sub, pwd) {
                         logo: ruleObject.logo,
                         lang: 'ds',
                     });
+                    if (ruleMeta.mergeList) {
+                        if (ruleMeta.more && typeof ruleMeta.more === 'object') {
+                            ruleMeta.more.mergeList = 1;
+                        } else {
+                            ruleMeta.more = {mergeList: 1};
+                        }
+                    }
                     // console.log('ds ruleMeta:', ruleMeta);
                     await FileHeaderManager.writeHeader(filePath, ruleMeta);
                 } else {
@@ -289,10 +308,12 @@ async function generateSiteJSON(options, requestHost, sub, pwd) {
                         } catch (e) {
                             throw new Error(`Error parsing rule object for file: ${file}, ${e.message}`);
                         }
+                        guessRuleType(baseName, ruleObject);
                         Object.assign(ruleMeta, {
                             title: ruleObject.title,
                             author: ruleObject.author,
                             类型: ruleObject.类型 || '影视',
+                            mergeList: ruleObject.二级 === '*' || ruleObject.mergeList,
                             searchable: ruleObject.searchable,
                             filterable: ruleObject.filterable,
                             quickSearch: ruleObject.quickSearch,
@@ -300,6 +321,13 @@ async function generateSiteJSON(options, requestHost, sub, pwd) {
                             logo: ruleObject.logo,
                             lang: 'dr2',
                         });
+                        if (ruleMeta.mergeList) {
+                            if (ruleMeta.more && typeof ruleMeta.more === 'object') {
+                                ruleMeta.more.mergeList = 1;
+                            } else {
+                                ruleMeta.more = {mergeList: 1};
+                            }
+                        }
                         // console.log('dr2 ruleMeta:', ruleMeta);
                         await FileHeaderManager.writeHeader(filePath, ruleMeta);
                     } else {
@@ -419,11 +447,7 @@ async function generateSiteJSON(options, requestHost, sub, pwd) {
                         filterable: 1, // 固定值
                         quickSearch: 1, // 固定值
                     };
-                    if (baseName.includes('[画]')) {
-                        ruleObject.类型 = '漫画'
-                    } else if (baseName.includes('[书]')) {
-                        ruleObject.类型 = '小说'
-                    }
+                    guessRuleType(baseName, ruleObject);
                     let ruleMeta = {...ruleObject};
                     const filePath = path.join(pyDir, file);
                     const header = await FileHeaderManager.readHeader(filePath);
@@ -521,11 +545,7 @@ async function generateSiteJSON(options, requestHost, sub, pwd) {
                         filterable: 1,
                         quickSearch: 1,
                     };
-                    if (baseName.includes('[画]')) {
-                        ruleObject.类型 = '漫画'
-                    } else if (baseName.includes('[书]')) {
-                        ruleObject.类型 = '小说'
-                    }
+                    guessRuleType(baseName, ruleObject);
                     let ruleMeta = {...ruleObject};
                     const filePath = path.join(phpDir, file);
 
@@ -589,11 +609,7 @@ async function generateSiteJSON(options, requestHost, sub, pwd) {
                         filterable: 1, // 固定值
                         quickSearch: 1, // 固定值
                     };
-                    if (baseName.includes('[画]')) {
-                        ruleObject.类型 = '漫画'
-                    } else if (baseName.includes('[书]')) {
-                        ruleObject.类型 = '小说'
-                    }
+                    guessRuleType(baseName, ruleObject);
                     let ruleMeta = {...ruleObject};
                     const filePath = path.join(catDir, file);
                     const header = await FileHeaderManager.readHeader(filePath);

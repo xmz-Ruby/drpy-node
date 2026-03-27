@@ -5,6 +5,10 @@
   quickSearch: 0,
   title: '啊哈DJ[听]',
   '类型': '影视',
+  mergeList: true,
+  more: {
+    mergeList: 1
+  },
   lang: 'ds'
 })
 */
@@ -22,6 +26,7 @@ var rule = {
     headers: {
         'User-Agent': 'MOBILE_UA',
     },
+    timeout: 10000,
     play_parse: true,
     lazy: async function () {
         let {input, pdfh} = this;

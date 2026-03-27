@@ -18,6 +18,7 @@ emby@@{"server":"http://139.9.106.196:2345","username":"kid","password":""}@@小
 采集之王[合]@@?type=url&params=../json/采集[密]静态.json$1$@@采王成人[密]
 采集之王[合]@@?type=url&params=../json/采集2024静态.json$1$@@采王2024
 采集之王[合]@@?type=url&params=../json/采集2025静态.json$1$@@采王2025
+采集之王[合]@@?type=url&params=../json/采集2026静态.json$1$@@采王2026
 UC分享@@?type=url&params=../json/UC分享.json@@UC分享[盘]
 16wMV[听]@@?type=url&params=../json/十六万歌曲.txt
 点歌欢唱[B]@@?type=url&params=../json/十六万歌曲.txt
@@ -67,3 +68,4 @@ AppYqk@@{"host":"https://gapi0725.5p8jcjc.com/config.json,https://gapi0725.olrv5
 php@@{"host":"https://www.baidu.com"}@@php测试
 TG频道@@?type=url&params=../json/TG频道配置.json@@TG频道[优]
 TG频道@@?type=url&params=../json/TG短剧频道.json@@短剧频道[优]
+Emby[优]@@{"host":"https://emby.bangumi.ca","userId":"80e861cbff1343bfa0bedcea78895b91","token":"8b0b16aae7e8403cb3d19969b82c3902","deviceId":"ea27caf7-9a51-4209-b1a5-374bf30c2ffd","clientVersion":"4.9.0.31","pageSize":30}@@Emby[优]

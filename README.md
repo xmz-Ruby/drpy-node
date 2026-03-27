@@ -1,8 +1,8 @@
 # drpyS(drpy-node)
 
 [![zread](https://img.shields.io/badge/Ask_Zread-_.svg?style=plastic&color=00b0aa&labelColor=000000&logo=data%3Aimage%2Fsvg%2Bxml%3Bbase64%2CPHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTQuOTYxNTYgMS42MDAxSDIuMjQxNTZDMS44ODgxIDEuNjAwMSAxLjYwMTU2IDEuODg2NjQgMS42MDE1NiAyLjI0MDFWNC45NjAxQzEuNjAxNTYgNS4zMTM1NiAxLjg4ODEgNS42MDAxIDIuMjQxNTYgNS42MDAxSDQuOTYxNTZDNS4zMTUwMiA1LjYwMDEgNS42MDE1NiA1LjMxMzU2IDUuNjAxNTYgNC45NjAxVjIuMjQwMUM1LjYwMTU2IDEuODg2NjQgNS4zMTUwMiAxLjYwMDEgNC45NjE1NiAxLjYwMDFaIiBmaWxsPSIjZmZmIi8%2BCjxwYXRoIGQ9Ik00Ljk2MTU2IDEwLjM5OTlIMi4yNDE1NkMxLjg4ODEgMTAuMzk5OSAxLjYwMTU2IDEwLjY4NjQgMS42MDE1NiAxMS4wMzk5VjEzLjc1OTlDMS42MDE1NiAxNC4xMTM0IDEuODg4MSAxNC4zOTk5IDIuMjQxNTYgMTQuMzk5OUg0Ljk2MTU2QzUuMzE1MDIgMTQuMzk5OSA1LjYwMTU2IDE0LjExMzQgNS42MDE1NiAxMy43NTk5VjExLjAzOTlDNS42MDE1NiAxMC42ODY0IDUuMzE1MDIgMTAuMzk5OSA0Ljk2MTU2IDEwLjM5OTlaIiBmaWxsPSIjZmZmIi8%2BCjxwYXRoIGQ9Ik0xMy43NTg0IDEuNjAwMUgxMS4wMzg0QzEwLjY4NSAxLjYwMDEgMTAuMzk4NCAxLjg4NjY0IDEwLjM5ODQgMi4yNDAxVjQuOTYwMUMxMC4zOTg0IDUuMzEzNTYgMTAuNjg1IDUuNjAwMSAxMS4wMzg0IDUuNjAwMUgxMy43NTg0QzE0LjExMTkgNS42MDAxIDE0LjM5ODQgNS4zMTM1NiAxNC4zOTg0IDQuOTYwMVYyLjI0MDFDMTQuMzk4NCAxLjg4NjY0IDE0LjExMTkgMS42MDAxIDEzLjc1ODQgMS42MDAxWiIgZmlsbD0iI2ZmZiIvPgo8cGF0aCBkPSJNNCAxMkwxMiA0TDQgMTJaIiBmaWxsPSIjZmZmIi8%2BCjxwYXRoIGQ9Ik00IDEyTDEyIDQiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8L3N2Zz4K&logoColor=ffffff)](https://zread.ai/hjdhnx/drpy-node)
-[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/hjdhnx/drpy-node)
-
+[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/hjdhnx/drpy-node)  
+![drpyS](./public/images/drpys.png)  
 nodejs作为服务端的drpy实现。全面升级异步写法  
 ~~积极开发中，每日一更~~，当前进度 `100%`  
 ~~找工作中，随缘更新~~  
@@ -11,6 +11,7 @@ nodejs作为服务端的drpy实现。全面升级异步写法
 ### 常用超链接
 
 * [本项目主页-免翻](https://git-proxy.playdreamer.cn/hjdhnx/drpy-node)
+* [DS源仓库-去中心化](http://183.87.133.60:5678/)
 * ~~[最新DS本地包-适配皮卡丘](/gh/release)~~
 * [DS本地包下载中心](/admin/download)
 * [接口文档](docs/apidoc.md) | [接口列表如定时任务](docs/apiList.md) |
@@ -35,6 +36,7 @@ nodejs作为服务端的drpy实现。全面升级异步写法
 
 ### 插件应用列表
 
+* [Admin 管理面板](/apps/admin)
 * [DrPlayer](/apps/drplayer)
 * [Websocket实时日志](/apps/websocket)
 * [cookie管理插件](/apps/cookie-butler/index.html)
@@ -70,21 +72,33 @@ nodejs作为服务端的drpy实现。全面升级异步写法
 
 ## 更新记录
 
-### 20260131
+### 20260322
 
-更新至V1.3.21
+更新至V1.4.3
 
-### 20260127
+### 20260321
 
-更新至V1.3.20
+更新至V1.4.2
 
-### 20260125
+### 20260320
 
-更新至V1.3.19
+更新至V1.4.1
 
-### 20260118
+### 20260319
 
-更新至V1.3.18
+更新至V1.3.31
+
+### 20260317
+
+更新至V1.3.30
+
+### 20260315
+
+更新至V1.3.29
+
+### 20260314
+
+更新至V1.3.28
 
 [点此查看完整更新记录](docs/updateRecord.md)
 
@@ -120,6 +134,7 @@ todo:
 * [drpyS源属性说明](docs/ruleAttr.md)
 * [drpy2写源简述](docs/ruleDesc.md)
 * [关姐算法搭建说明](docs/suanfa.md)
+* [重要问题记录](docs/issue.md)
 
 ## 问题说明
 
